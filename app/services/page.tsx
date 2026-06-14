@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 
 export const metadata = {
   title: 'Services — Better Stacks',
@@ -62,11 +62,14 @@ export default function ServicesPage() {
           </li>
         </ol>
         <div className="mt-6">
-          <Button asChild>
-            <a href="https://betterstacks.ca/book" target="_blank" rel="noopener noreferrer">
-              Book a Free 20-Min Call
-            </a>
-          </Button>
+          <a
+            href="https://betterstacks.ca/book"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants()}
+          >
+            Book a Free 20-Min Call
+          </a>
         </div>
       </div>
     </div>

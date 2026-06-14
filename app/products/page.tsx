@@ -1,4 +1,5 @@
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 export const metadata = {
   title: 'Products — Better Stacks',
@@ -10,7 +11,7 @@ export default function ProductsPage() {
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
       <h1 className="text-4xl font-bold tracking-tight text-foreground">Workflow Guides</h1>
       <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-        Step-by-step AI workflow guides built for small business owners. Tool setup, API instructions,
+        Step-by-step AI workflow guides built for small business owners. Tool setup, instructions,
         and copy-paste prompts included — everything you need to implement it yourself.
       </p>
 
@@ -19,11 +20,14 @@ export default function ProductsPage() {
           Guides coming soon. Subscribe to the newsletter to be the first to know when new ones drop.
         </p>
         <div className="mt-6">
-          <Button asChild variant="outline">
-            <a href="https://betterstacks.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">
-              Subscribe Free →
-            </a>
-          </Button>
+          <a
+            href="https://betterstacks.beehiiv.com/subscribe"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(buttonVariants({ variant: 'outline' }))}
+          >
+            Subscribe Free →
+          </a>
         </div>
       </div>
     </div>

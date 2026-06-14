@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { getAllPosts } from '@/lib/posts'
 
 export default function Home() {
@@ -21,14 +22,17 @@ export default function Home() {
             No tech team needed, no jargon, no 47-step setup process.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <a href="https://betterstacks.ca/book" target="_blank" rel="noopener noreferrer">
-                Book a Free 20-Min Call
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/blog">Read the Blog</Link>
-            </Button>
+            <a
+              href="https://betterstacks.ca/book"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ size: 'lg' }))}
+            >
+              Book a Free 20-Min Call
+            </a>
+            <Link href="/blog" className={cn(buttonVariants({ variant: 'outline', size: 'lg' }))}>
+              Read the Blog
+            </Link>
           </div>
         </div>
       </section>
@@ -74,9 +78,9 @@ export default function Home() {
               content repurposing, intake forms. You get a working system, not a tutorial.
             </p>
             <div className="mt-6">
-              <Button asChild variant="outline">
-                <Link href="/services">See what I build →</Link>
-              </Button>
+              <Link href="/services" className={cn(buttonVariants({ variant: 'outline' }))}>
+                See what I build →
+              </Link>
             </div>
           </div>
           <div className="rounded-2xl border border-border bg-muted/30 p-8 lg:min-w-[320px]">
@@ -138,11 +142,14 @@ export default function Home() {
             Free. No spam. Unsubscribe anytime. Join small business owners who are already saving hours every week.
           </p>
           <div className="mt-8">
-            <Button asChild variant="secondary" size="lg">
-              <a href="https://betterstacks.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">
-                Subscribe Free →
-              </a>
-            </Button>
+            <a
+              href="https://betterstacks.beehiiv.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
+            >
+              Subscribe Free →
+            </a>
           </div>
         </div>
       </section>

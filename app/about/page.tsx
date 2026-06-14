@@ -1,4 +1,6 @@
-import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 export const metadata = {
   title: 'About — Better Stacks',
@@ -33,16 +35,22 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-        <Button asChild>
-          <a href="https://betterstacks.ca/book" target="_blank" rel="noopener noreferrer">
-            Book a Free Call
-          </a>
-        </Button>
-        <Button asChild variant="outline">
-          <a href="https://betterstacks.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">
-            Subscribe to the Newsletter
-          </a>
-        </Button>
+        <a
+          href="https://betterstacks.ca/book"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonVariants()}
+        >
+          Book a Free Call
+        </a>
+        <a
+          href="https://betterstacks.beehiiv.com/subscribe"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(buttonVariants({ variant: 'outline' }))}
+        >
+          Subscribe to the Newsletter
+        </a>
       </div>
     </div>
   )

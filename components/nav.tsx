@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 
 export function Nav() {
   return (
@@ -14,11 +14,14 @@ export function Nav() {
           <Link href="/products" className="hover:text-foreground transition-colors">Products</Link>
           <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
         </nav>
-        <Button asChild>
-          <a href="https://betterstacks.ca/book" target="_blank" rel="noopener noreferrer">
-            Book a Call
-          </a>
-        </Button>
+        <a
+          href="https://betterstacks.ca/book"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonVariants()}
+        >
+          Book a Call
+        </a>
       </div>
     </header>
   )
