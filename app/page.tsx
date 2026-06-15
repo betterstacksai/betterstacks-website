@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { DemoVideo } from '@/components/demo-video'
@@ -39,7 +38,7 @@ const workflowCards = [
 
 const howItWorksSteps = [
   { number: '01', heading: 'Quick call', body: 'We find the one task eating your time.' },
-  { number: '02', heading: 'I build it', body: 'A simple workflow tailored to your business.' },
+  { number: '02', heading: 'We build it', body: 'A simple workflow tailored to your business.' },
   { number: '03', heading: 'You\'re hands-off', body: 'It runs in the background while you work.' },
 ]
 
@@ -50,12 +49,14 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">
         <div className="max-w-3xl">
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Your business runs on a dozen time-sucking tasks.{' '}
-            <span className="text-primary">I automate them.</span>
+            It&apos;s not the size of your{' '}
+            <span className="text-primary italic">^AI</span>
+            {' '}stack that matters.{' '}
+            <span className="text-muted-foreground">It&apos;s how you use it.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            I build simple AI workflows for local small businesses — so you stop doing the repetitive
-            stuff and get back to the work that matters.
+            We build simple AI workflows that make the tools you already use work harder — so you
+            can stop doing the repetitive stuff and get back to the work that matters.
           </p>
           <div className="mt-8">
             <a
