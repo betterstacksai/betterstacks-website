@@ -1,154 +1,149 @@
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { getAllPosts } from '@/lib/posts'
+import { DemoVideo } from '@/components/demo-video'
+import { FlowDiagram } from '@/components/flow-diagram'
+
+const workflowCards = [
+  {
+    title: 'Never miss another lead',
+    problem: 'Most enquiries wait hours for a reply — and the customer books whoever answers first.',
+    solution: 'An instant, personalized response to every web, email, or DM enquiry — 24/7, even when you\'re on a job.',
+    flow: [
+      { label: 'New enquiry arrives' },
+      { label: 'AI drafts reply' },
+      { label: 'Sent instantly' },
+    ],
+  },
+  {
+    title: 'Turn happy customers into 5-star reviews',
+    problem: 'You know reviews bring in business, but asking always slips your mind.',
+    solution: 'Automatically sends each customer a friendly review request with a one-tap link, right after the job\'s done.',
+    flow: [
+      { label: 'Job completed' },
+      { label: 'Review request sent' },
+      { label: 'Customer taps link' },
+    ],
+  },
+  {
+    title: 'Get paid faster, without the awkward follow-up',
+    problem: 'Chasing unpaid invoices is uncomfortable, so it slides — and your cash flow takes the hit.',
+    solution: 'Polite, automatic reminders that follow up for you until the invoice is paid.',
+    flow: [
+      { label: 'Invoice sent' },
+      { label: 'Auto reminder' },
+      { label: 'Payment received' },
+    ],
+  },
+]
+
+const howItWorksSteps = [
+  { number: '01', heading: 'Quick call', body: 'We find the one task eating your time.' },
+  { number: '02', heading: 'I build it', body: 'A simple workflow tailored to your business.' },
+  { number: '03', heading: 'You\'re hands-off', body: 'It runs in the background while you work.' },
+]
 
 export default function Home() {
-  const recentPosts = getAllPosts().slice(0, 3)
-
   return (
     <>
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
-            Free weekly newsletter
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            AI for your business —<br className="hidden sm:inline" /> in plain English.
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            Your business runs on a dozen time-sucking tasks.{' '}
+            <span className="text-primary">I automate them.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-            Every week I show Canadian small business owners one AI workflow they can use the same day.
-            No tech team needed, no jargon, no 47-step setup process.
+          <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+            I build simple AI workflows for local small businesses — so you stop doing the repetitive
+            stuff and get back to the work that matters.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8">
             <a
               href="https://betterstacks.ca/book"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(buttonVariants({ size: 'lg' }))}
             >
-              Book a Free 20-Min Call
+              Book a free 15-min call
             </a>
-            <Link href="/blog" className={cn(buttonVariants({ variant: 'outline', size: 'lg' }))}>
-              Read the Blog
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Value props */}
-      <section className="border-y border-border bg-muted/30">
+      {/* What I Build */}
+      <section className="border-t border-border bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="grid gap-10 sm:grid-cols-3">
-            <div>
-              <p className="text-2xl font-bold text-primary">01</p>
-              <h3 className="mt-2 text-base font-semibold text-foreground">One workflow, every week</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Each newsletter issue covers one tool, one use case, and one thing you can try the same day — not a tech roundup.
-              </p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-primary">02</p>
-              <h3 className="mt-2 text-base font-semibold text-foreground">Plain English, always</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                No jargon, no assumptions about your tech level. If you can use email, you can follow along.
-              </p>
-            </div>
-            <div>
-              <p className="text-2xl font-bold text-primary">03</p>
-              <h3 className="mt-2 text-base font-semibold text-foreground">Real results</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Specific time and money savings, not vague productivity claims. Everything I publish has been tested with real businesses.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <p className="text-lg font-medium text-foreground">
+            Practical automations that save you time and money — no tech headaches, no big software overhauls.
+          </p>
 
-      {/* Services */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-xl">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">
-              Want someone to build it for you?
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              I implement AI workflows directly inside your business — customer follow-ups, review responses,
-              content repurposing, intake forms. You get a working system, not a tutorial.
-            </p>
-            <div className="mt-6">
-              <Link href="/services" className={cn(buttonVariants({ variant: 'outline' }))}>
-                See what I build →
-              </Link>
-            </div>
-          </div>
-          <div className="rounded-2xl border border-border bg-muted/30 p-8 lg:min-w-[320px]">
-            <p className="text-sm font-medium text-muted-foreground">Typical results</p>
-            <ul className="mt-4 space-y-3 text-sm text-foreground">
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5 text-primary font-bold">✓</span>
-                <span>3–5 hours saved per week on repetitive tasks</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5 text-primary font-bold">✓</span>
-                <span>Consistent customer follow-up — without lifting a finger</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-0.5 text-primary font-bold">✓</span>
-                <span>On-brand AI responses, in your voice</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          {/* Workflow Cards */}
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {workflowCards.map((card) => (
+              <div
+                key={card.title}
+                className="flex flex-col gap-5 rounded-2xl border border-border bg-background p-6"
+              >
+                <div>
+                  <h3 className="text-lg font-bold text-foreground">{card.title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">The problem: </span>
+                    {card.problem}
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    <span className="font-semibold text-foreground">The fix: </span>
+                    {card.solution}
+                  </p>
+                </div>
 
-      {/* Recent posts */}
-      {recentPosts.length > 0 && (
-        <section className="border-t border-border bg-muted/30">
-          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold tracking-tight text-foreground">From the blog</h2>
-              <Link href="/blog" className="text-sm font-medium text-primary hover:underline">
-                View all →
-              </Link>
-            </div>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {recentPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group rounded-xl border border-border bg-background p-6 transition-shadow hover:shadow-md"
+                <FlowDiagram steps={card.flow} />
+
+                <DemoVideo />
+
+                <a
+                  href="https://betterstacks.ca/book"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-primary hover:underline"
                 >
-                  <time className="text-xs text-muted-foreground">{post.date}</time>
-                  <h3 className="mt-2 font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{post.excerpt}</p>
-                </Link>
-              ))}
-            </div>
+                  Get this for your business →
+                </a>
+              </div>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
-      {/* Newsletter CTA */}
+      {/* How It Works */}
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          How it works
+        </h2>
+        <div className="mt-10 grid gap-8 sm:grid-cols-3">
+          {howItWorksSteps.map((step) => (
+            <div key={step.number}>
+              <p className="text-3xl font-extrabold text-primary">{step.number}</p>
+              <h3 className="mt-3 text-base font-bold text-foreground">{step.heading}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Final CTA */}
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">
-            Get smarter about AI — one email a week.
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Ready to get your hours back?
           </h2>
-          <p className="mt-4 text-primary-foreground/80 max-w-lg mx-auto">
-            Free. No spam. Unsubscribe anytime. Join small business owners who are already saving hours every week.
-          </p>
           <div className="mt-8">
             <a
-              href="https://betterstacks.beehiiv.com/subscribe"
+              href="https://betterstacks.ca/book"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}
             >
-              Subscribe Free →
+              Book your free 15-min call
             </a>
           </div>
         </div>
