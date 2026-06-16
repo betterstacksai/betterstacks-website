@@ -76,6 +76,12 @@ export default function Home() {
                   Schedule Call →
                 </a>
                 <a
+                  href="/products"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                >
+                  What We&apos;ve Built
+                </a>
+                <a
                   href="#what-we-do"
                   className="text-sm font-medium text-foreground underline underline-offset-4 hover:text-primary transition-colors"
                 >
