@@ -54,12 +54,7 @@ export default function Home() {
 
               <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl leading-[1.1]">
                 It&apos;s not the size of your{' '}
-                <span className="relative inline-block pr-1">
-                  <span className="absolute -top-6 left-0 text-primary italic text-2xl font-extrabold sm:text-3xl sm:-top-7">
-                    AI
-                  </span>
-                  stack
-                </span>
+                stack
                 {' '}that matters.{' '}
                 <span className="text-primary/60">It&apos;s how you</span>{' '}
                 <span className="text-muted-foreground underline decoration-primary decoration-2 underline-offset-4">
