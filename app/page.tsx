@@ -62,8 +62,8 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="mt-6 text-base text-muted-foreground leading-relaxed max-w-lg">
-                We help small businesses implement AI automations that actually save time and money — not shiny features that sit unused. Just workflows that quietly make your job easier.
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
+                We help small businesses implement AI automations that actually save time and money — not shiny features that sit unused.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
