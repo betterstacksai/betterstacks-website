@@ -203,24 +203,24 @@ export default function Home() {
 
       {/* CTA Block */}
       <section className="bg-background px-4 py-16 sm:px-6">
-        <div className="mx-auto max-w-5xl rounded-3xl bg-gray-950 px-8 py-14 sm:px-12">
+        <div className="mx-auto max-w-5xl rounded-3xl bg-mint px-8 py-14 sm:px-12">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
 
             {/* Left — copy */}
             <div>
-              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
                 Tell us where your time is going.
               </h2>
-              <p className="mt-4 text-base text-white/70 leading-relaxed">
+              <p className="mt-4 text-base text-muted-foreground leading-relaxed">
                 Drop your info and we&apos;ll reach out within one business day — no pitch, just a straight answer on whether automation can help.
               </p>
-              <p className="mt-6 text-sm text-white/50">
+              <p className="mt-6 text-sm text-muted-foreground">
                 Prefer to book directly?{' '}
                 <a
                   href="https://betterstacks.ca/book"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/70 underline underline-offset-4 hover:text-white transition-colors"
+                  className="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
                 >
                   Schedule a strategy call →
                 </a>

@@ -45,15 +45,15 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="rounded-2xl bg-white/10 px-8 py-10 text-center">
-        <p className="text-2xl font-bold text-white">You're in.</p>
-        <p className="mt-2 text-sm text-white/70">We'll be in touch within one business day.</p>
+      <div className="rounded-2xl bg-background/60 px-8 py-10 text-center">
+        <p className="text-2xl font-bold text-foreground">You're in.</p>
+        <p className="mt-2 text-sm text-muted-foreground">We'll be in touch within one business day.</p>
       </div>
     )
   }
 
   const inputClass =
-    'w-full rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary'
+    'w-full rounded-xl bg-white border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary'
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
